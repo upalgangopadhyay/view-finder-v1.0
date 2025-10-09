@@ -1,0 +1,41 @@
+.navigation-container1 {
+  display: contents;
+}
+ 
+.navigation-container2 {
+  display: none;
+}
+ 
+.navigation-container3 {
+  display: contents;
+}
+ 
+.navigation-container4 {
+  display: none;
+}
+ 
+.navigation-container5 {
+  display: contents;
+}
+ 
+.navigation-navigation-toggle-icon1 {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  position: absolute;
+  transform: rotate(0deg);
+  transition: opacity var(--animation-duration-fast)
+        var(--animation-curve-primary),
+      transform var(--animation-duration-fast) var(--animation-curve-primary);
+}
+ 
+.navigation-navigation-toggle-icon2 {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  position: absolute;
+  transform: rotate(90deg);
+  transition: opacity var(--animation-duration-fast)
+        var(--animation-curve-primary),
+      transform var(--animation-duration-fast) var(--animation-curve-primary);
+}
