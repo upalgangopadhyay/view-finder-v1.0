@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './upcomingTours.css';
 import TourDetails from './tourDetails';
 import kashmirImg from '../assets/images/kashmir.jpg';
+import oceanVid from '../assets/videos/ocean.mp4';
 
 const tours = [
   {

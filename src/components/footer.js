@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import "./footer.css";
+import { Facebook, Instagram } from "lucide-react";
+
 
 const Footer = () => {
-  // ✅ Use React effect to handle animations & logic instead of <Script>
   useEffect(() => {
     const footerContactItems = document.querySelectorAll(".footer-contact-item");
 
@@ -72,74 +73,39 @@ const Footer = () => {
               into reality. Your trusted partner for exceptional travel
               experiences worldwide.
             </p>
-
             <div className="footer-social-links">
-              {["Facebook", "Instagram", "Twitter", "YouTube"].map((social, i) => (
-                <a href="#" key={i} aria-label={`Follow us on ${social}`}>
-                  <div className="footer-social-link">
-                    {/* You can replace these with real icons later */}
-                    <span>{social}</span>
-                  </div>
-                </a>
-              ))}
+              <a
+                href="https://www.facebook.com/share/1Gp2zHi9Q3/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit us on Facebook"
+                className="footer-social-link"
+              >
+                <Facebook className="footer-icon" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/yourProfile"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit us on Instagram"
+                className="footer-social-link"
+              >
+                <Instagram className="footer-icon" />
+              </a>
             </div>
+
           </div>
 
           {/* Links Grid */}
           <div className="footer-links-grid">
-            <div className="footer-links-column">
-              <h3 className="footer-column-title">Explore</h3>
-              <ul className="footer-links-list">
-                {["Upcoming Tours", "Travel Gallery", "Customer Reviews", "Travel Packages"].map(
-                  (text, i) => (
-                    <li key={i}>
-                      <a href="#" className="footer-link">
-                        {text}
-                      </a>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            <div className="footer-links-column">
-              <h3 className="footer-column-title">Services</h3>
-              <ul className="footer-links-list">
-                {[
-                  "Custom Tour Planning",
-                  "Group Tours",
-                  "Private Excursions",
-                  "Travel Consultation",
-                ].map((text, i) => (
-                  <li key={i}>
-                    <a href="#" className="footer-link">
-                      {text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="footer-links-column">
-              <h3 className="footer-column-title">Company</h3>
-              <ul className="footer-links-list">
-                {["About Us", "Our Team", "Partnerships", "Careers"].map((text, i) => (
-                  <li key={i}>
-                    <a href="#" className="footer-link">
-                      {text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* Contact Column */}
             <div className="footer-links-column footer-contact-column">
               <h3 className="footer-column-title">Contact Us</h3>
               <div className="footer-contact-list">
                 <div className="footer-contact-item">
-                  <a href="tel:+1234567890" className="footer-contact-link">
-                    +1 (234) 567-890
+                  <a href="tel:+91 8697524868" className="footer-contact-link">
+                    Urmi
                   </a>
                 </div>
                 <div className="footer-contact-item">

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./navigation.css";
+import { Phone } from "lucide-react";
 
 const Navigation = () => {
   useEffect(() => {
@@ -165,33 +166,20 @@ const Navigation = () => {
                   <span>About Us</span>
                 </a>
               </li>
+
               <li className="navigation-item navigation-item-cta">
                 <a
-                  href="https://wa.me/1234567890"
+                  href="https://wa.me/8697524868?text=Hi%20I%20want%20to%20know%20about%20your%20tours"
                   target="_blank"
                   rel="noreferrer noopener"
                   className="navigation-cta"
+                  aria-label="Chat on WhatsApp"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    className="navigation-cta-icon"
-                  >
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233a14 14 0 0 0 6.392 6.384"
-                    />
-                  </svg>
-                  <span>Contact Us</span>
+                  <Phone className="navigation-cta-icon" /> {/* Lucide WhatsApp icon */}
+                  <span>WhatsApp</span>
                 </a>
               </li>
+
             </ul>
           </div>
         </div>

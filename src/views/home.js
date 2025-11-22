@@ -101,12 +101,18 @@ const Home = () => {
 
           <h1 className="hero-title">Viewfinder Travel Solutions</h1>
           <p className="hero-subtitle">
-            Discover the world through our lens. Expert-curated tours and personalized travel experiences that transform destinations into unforgettable memories.
+            Discover the world through our lens. Expert-curated tours and personalized travel experiences that transform destinations into unforgettable memories.</p>
+          <p className="hero-subtitle">
+            Reach out via Call or WhatsApp and let’s create your dream travel experience!
           </p>
 
           <div className="hero-cta-group">
             <a href="#upcoming-tours" className="btn btn-primary btn-lg">Explore Tours</a>
-            <a href="#contact-section" className="btn btn-lg btn-outline">Plan Your Journey</a>
+            <a
+            href="https://wa.me/8697524868?text=Hi%20I%20want%20to%20know%20about%20your%20tours"
+            className="btn btn-lg btn-outline">
+              Plan Your Journey
+            </a>
           </div>
         </div>
       </section>
