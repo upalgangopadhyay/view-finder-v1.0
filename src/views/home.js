@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import "./home.css";
+import UpcomingTours from "../components/upcomingTours";
 
 const Home = () => {
   useEffect(() => {
@@ -11,6 +12,8 @@ const Home = () => {
       threshold: 0.1,
       rootMargin: "0px 0px -50px 0px",
     };
+
+
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -102,11 +105,13 @@ const Home = () => {
           </p>
 
           <div className="hero-cta-group">
-            <a href="#featured-tours" className="btn btn-primary btn-lg">Explore Tours</a>
+            <a href="#upcoming-tours" className="btn btn-primary btn-lg">Explore Tours</a>
             <a href="#contact-section" className="btn btn-lg btn-outline">Plan Your Journey</a>
           </div>
         </div>
       </section>
+
+      <UpcomingTours />
 
       <Footer />
     </div>

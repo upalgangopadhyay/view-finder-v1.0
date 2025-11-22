@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./navigation.css";
 
 const Navigation = () => {
@@ -145,14 +146,14 @@ const Navigation = () => {
           <div id="navigation-menu" className="navigation-menu">
             <ul className="navigation-list">
               <li className="navigation-item">
-                <a href="#tours" className="navigation-link">
-                  <span>Upcoming Tours</span>
+                <a href="/#upcoming-tours" className="navigation-link">
+                <span>Upcoming Tours</span>
                 </a>
+
               </li>
               <li className="navigation-item">
-                <a href="#gallery" className="navigation-link">
-                  <span>Gallery</span>
-                </a>
+                <Link to="/gallery" className="navigation-link">Gallery</Link>
+
               </li>
               <li className="navigation-item">
                 <a href="#testimonials" className="navigation-link">
@@ -160,7 +161,7 @@ const Navigation = () => {
                 </a>
               </li>
               <li className="navigation-item">
-                <a href="#about" className="navigation-link">
+                <a href="#footer-main" className="navigation-link">
                   <span>About Us</span>
                 </a>
               </li>
