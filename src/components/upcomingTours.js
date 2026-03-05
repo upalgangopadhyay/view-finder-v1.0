@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './upcomingTours.css';
-import TourDetails from './tourDetails';
 import BookingInquiryModal from './bookingInquiryModal';
 
 const tours = [
@@ -18,7 +17,7 @@ const tours = [
   },
   {
     id: 3,
-    title: 'Haridwar and Missourie',
+    title: 'Haridwar and Mussoorie',
     img: '/thumbnails/haridwar-mussorie.jpg',
     long: 'Ganga river',
   },
@@ -54,13 +53,19 @@ const tours = [
   },
 ];
 
+const WHATSAPP_NUMBER = '918697524868';
+
 export default function UpcomingTours() {
-  const [selected, setSelected] = useState(null);
   const [bookingTour, setBookingTour] = useState(null);
 
   const openBooking = (tour) => {
-    setSelected(null);
     setBookingTour(tour);
+  };
+
+  const openEnquiry = (tour) => {
+    const text = `Hi, I wanted to get more details regarding the '${tour.title}' trip.`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -77,20 +82,12 @@ export default function UpcomingTours() {
               <p className="ut-desc">{t.long}</p>
               <div className="ut-actions">
                 <button className="ut-btn ut-btn-primary" onClick={() => openBooking(t)}>Book</button>
-                <button className="ut-btn" onClick={() => setSelected(t)}>Details</button>
+                <button className="ut-btn" onClick={() => openEnquiry(t)}>Enquire</button>
               </div>
             </div>
           </article>
         ))}
       </div>
-
-      {selected && (
-        <TourDetails
-          tour={selected}
-          onBook={openBooking}
-          onClose={() => setSelected(null)}
-        />
-      )}
 
       {bookingTour && (
         <BookingInquiryModal
