@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./footer.css";
 import { Facebook, Instagram } from "lucide-react";
 
-
 const Footer = () => {
   useEffect(() => {
     const footerContactItems = document.querySelectorAll(".footer-contact-item");
@@ -44,7 +43,6 @@ const Footer = () => {
 
       <div className="footer-content-wrapper">
         <div className="footer-main-content">
-          {/* Brand Section */}
           <div className="footer-brand-section">
             <div className="footer-logo-wrapper">
               <div className="footer-logo-icon">
@@ -85,7 +83,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/yourProfile"
+                href="https://www.instagram.com/viewfinderkolkata/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit us on Instagram"
@@ -94,44 +92,35 @@ const Footer = () => {
                 <Instagram className="footer-icon" />
               </a>
             </div>
-
           </div>
 
-          {/* Links Grid */}
           <div className="footer-links-grid">
-            {/* Contact Column */}
             <div className="footer-links-column footer-contact-column">
               <h3 className="footer-column-title">Contact Us</h3>
               <div className="footer-contact-list">
                 <div className="footer-contact-item">
-                  <a href="tel:+91 8697524868" className="footer-contact-link">
-                    Urmi
+                  <a href="tel:+918697524868" className="footer-contact-link">
+                    8697524868
                   </a>
                 </div>
                 <div className="footer-contact-item">
                   <a
-                    href="mailto:info@viewfindertravel.com?subject="
+                    href="mailto:viewfindertravels@gmail.com"
                     className="footer-contact-link"
                   >
-                    info@viewfindertravel.com
+                    viewfindertravels@gmail.com
                   </a>
-                </div>
-                <div className="footer-contact-item">
-                  <address className="footer-contact-address">
-                    123 Travel Lane, Adventure City, AC 12345
-                  </address>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="footer-divider"></div>
         <div className="footer-bottom-section">
           <div className="footer-bottom-content">
             <p className="footer-copyright">
-              © 2025 Viewfinder Travel Solutions. All rights reserved.
+              (c) 2025 Viewfinder Travel Solutions. All rights reserved.
             </p>
             <div className="footer-legal-links">
               {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((link, i) => (

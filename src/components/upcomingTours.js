@@ -1,69 +1,82 @@
 import React, { useState } from 'react';
 import './upcomingTours.css';
 import TourDetails from './tourDetails';
-import kashmirImg from '../assets/images/kashmir.jpg';
-import oceanVid from '../assets/videos/ocean.mp4';
+import BookingInquiryModal from './bookingInquiryModal';
 
 const tours = [
   {
     id: 1,
-    title: 'Kashmir Snow Trip',
-    date: 'TBD',
-    price: 'TBD',
-    img: kashmirImg,
-    long: 'Nighttime stargazing with ',
+    title: 'Kashmir',
+    img: '/thumbnails/kashmir.jpg',
+    long: 'Mountain and lake',
   },
   {
     id: 2,
-    title: 'Historic City Walk',
-    date: '2025-12-12',
-    price: '$49',
-    img: 'https://picsum.photos/400/300?random=2'
+    title: 'Shimla Manali',
+    img: '/thumbnails/shimla-manali.jpg',
+    long: 'Mountains',
   },
   {
     id: 3,
-    title: 'Mountain Lake Kayak',
-    date: '2026-01-08',
-    price: '$99',
-    img: 'https://picsum.photos/400/300?random=3'
+    title: 'Haridwar and Missourie',
+    img: '/thumbnails/haridwar-mussorie.jpg',
+    long: 'Ganga river',
   },
   {
     id: 4,
-    title: 'Countryside Cycling',
-    date: '2026-01-20',
-    price: '$69',
-    img: 'https://picsum.photos/400/300?random=4'
+    title: 'Duars',
+    img: '/thumbnails/duars.jpg',
+    long: 'Jungle Safari',
   },
   {
     id: 5,
-    title: 'Desert Stargazing',
-    date: '2026-02-03',
-    price: '$129',
-    img: 'https://picsum.photos/400/300?random=5'
-  }
+    title: 'Darjeeling and offbeat',
+    img: '/thumbnails/darjeeling-and-offbeat.jpg',
+    long: 'Tea gardens',
+  },
+  {
+    id: 6,
+    title: 'Gangtok',
+    img: '/thumbnails/gangtok.jpg',
+    long: 'Himalayan town views',
+  },
+  {
+    id: 7,
+    title: 'Silk route',
+    img: 'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg',
+    long: 'Mountain road of silk route (east sikkim)',
+  },
+  {
+    id: 8,
+    title: 'Goa',
+    img: '/thumbnails/goa.jpg',
+    long: 'Goa beach',
+  },
 ];
 
 export default function UpcomingTours() {
   const [selected, setSelected] = useState(null);
+  const [bookingTour, setBookingTour] = useState(null);
 
-    return (
+  const openBooking = (tour) => {
+    setSelected(null);
+    setBookingTour(tour);
+  };
+
+  return (
     <section id="upcoming-tours" className="upcoming-tours">
       <h2 className="ut-title">Upcoming Tours</h2>
       <div className="ut-grid">
-        {tours.map(t => (
+        {tours.map((t) => (
           <article key={t.id} className="ut-card">
             <div className="ut-image-wrap">
               <img className="ut-image" src={t.img} alt={t.title} />
             </div>
             <div className="ut-body">
               <h3 className="ut-card-title">{t.title}</h3>
-              <p className="ut-meta">
-                <span className="ut-date">{t.date}</span>
-                <span className="ut-price">{t.price}</span>
-              </p>
-              <p className="ut-desc">A memorable small-group experience — limited seats available.</p>
+              <p className="ut-desc">{t.long}</p>
               <div className="ut-actions">
-                <button className="ut-btn ut-btn-primary">Book</button>
+                <button className="ut-btn ut-btn-primary" onClick={() => openBooking(t)}>Book</button>
                 <button className="ut-btn" onClick={() => setSelected(t)}>Details</button>
               </div>
             </div>
@@ -74,7 +87,15 @@ export default function UpcomingTours() {
       {selected && (
         <TourDetails
           tour={selected}
+          onBook={openBooking}
           onClose={() => setSelected(null)}
+        />
+      )}
+
+      {bookingTour && (
+        <BookingInquiryModal
+          tour={bookingTour}
+          onClose={() => setBookingTour(null)}
         />
       )}
     </section>

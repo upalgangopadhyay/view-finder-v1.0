@@ -7,11 +7,12 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Gallery from './views/gallery';
-
+import PlanYourTour from './views/planYourTour';
+import Testimonials from './views/testimonials';
+import AboutUs from './views/aboutUs';
 
 import './index.css';
 import Home from './views/home';
-// import NotFound from './views/not-found';
 
 const App = () => {
   return (
@@ -19,15 +20,14 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
-        {/* Optional: fallback route for 404 */}
-        {/* <Route path="*" element={<NotFound />} /> */}
-        {/* If you want to redirect unmatched routes to home instead: */}
+        <Route path="/plan-your-tour" element={<PlanYourTour />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
 };
-
 
 const container = document.getElementById('app');
 const root = createRoot(container);

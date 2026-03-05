@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import "./home.css";
@@ -7,13 +8,10 @@ import UpcomingTours from "../components/upcomingTours";
 
 const Home = () => {
   useEffect(() => {
-    // --- Fade-in animations ---
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -50px 0px",
     };
-
-
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -30,27 +28,6 @@ const Home = () => {
       el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
       observer.observe(el);
     });
-
-    // WhatsApp button fade on scroll
-    const whatsappButton = document.getElementById("whatsapp-float");
-    if (whatsappButton) {
-      whatsappButton.style.transition = "opacity 0.3s ease";
-      whatsappButton.style.opacity = "0";
-      whatsappButton.style.pointerEvents = "none";
-
-      const handleScroll = () => {
-        if (window.scrollY > 300) {
-          whatsappButton.style.opacity = "1";
-          whatsappButton.style.pointerEvents = "auto";
-        } else {
-          whatsappButton.style.opacity = "0";
-          whatsappButton.style.pointerEvents = "none";
-        }
-      };
-
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
   }, []);
 
   return (
@@ -79,19 +56,8 @@ const Home = () => {
 
         <div className="hero-content">
           <div className="hero-badge">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <g
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-              >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                 <path d="m16.24 7.76l-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path>
                 <circle cx="12" cy="12" r="10"></circle>
               </g>
@@ -101,23 +67,28 @@ const Home = () => {
 
           <h1 className="hero-title">Viewfinder Travel Solutions</h1>
           <p className="hero-subtitle">
-            Discover the world through our lens. Expert-curated tours and personalized travel experiences that transform destinations into unforgettable memories.</p>
-          <p className="hero-subtitle">
-            Reach out via Call or WhatsApp and let’s create your dream travel experience!
+            Discover the world through our lens. Expert-curated tours and personalized travel experiences that transform destinations into unforgettable memories.
           </p>
+          <p className="hero-subtitle">Reach out via Call or WhatsApp and let us create your dream travel experience.</p>
 
           <div className="hero-cta-group">
             <a href="#upcoming-tours" className="btn btn-primary btn-lg">Explore Tours</a>
-            <a
-            href="https://wa.me/8697524868?text=Hi%20I%20want%20to%20know%20about%20your%20tours"
-            className="btn btn-lg btn-outline">
-              Plan Your Journey
-            </a>
+            <Link to="/plan-your-tour" className="btn btn-lg btn-outline">Plan Your Own Tour</Link>
           </div>
         </div>
       </section>
 
       <UpcomingTours />
+
+      <section id="plan-your-own-tour" className="custom-tour-section">
+        <div className="custom-tour-content">
+          <h2 className="custom-tour-title">Plan Your Own Tour</h2>
+          <p className="custom-tour-text">
+            Tell us your destination, travel style, and budget preferences. We will craft a group-ready or personalized itinerary for you.
+          </p>
+          <Link to="/plan-your-tour" className="btn btn-primary btn-lg">Open Custom Tour Form</Link>
+        </div>
+      </section>
 
       <Footer />
     </div>

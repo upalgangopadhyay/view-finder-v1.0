@@ -1,0 +1,100 @@
+.plan-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+.plan-main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 120px 16px 40px;
+}
+
+.plan-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.plan-header p {
+  margin: 8px 0 12px;
+  color: #334155;
+}
+
+.plan-back-link {
+  color: #0ea5a4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.plan-form-card {
+  margin-top: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  padding: 20px;
+}
+
+.plan-form {
+  display: grid;
+  gap: 14px;
+}
+
+.plan-field {
+  display: grid;
+  gap: 6px;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+.plan-field input,
+.plan-field textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+
+.plan-fieldset {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 0;
+}
+
+.plan-fieldset legend {
+  color: #0f172a;
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+.plan-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  color: #334155;
+}
+
+.plan-submit {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 14px;
+  background: #0ea5a4;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.plan-submit:hover {
+  background: #0c8f8e;
+}
+
+@media (max-width: 640px) {
+  .plan-main {
+    padding-top: 104px;
+  }
+
+  .plan-form-card {
+    padding: 14px;
+  }
+}

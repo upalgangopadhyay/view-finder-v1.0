@@ -1,0 +1,40 @@
+.about-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.about-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 120px 16px 40px;
+}
+
+.about-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.about-card h1 {
+  margin: 0 0 12px;
+  color: #0f172a;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+}
+
+.about-card p {
+  margin: 0 0 12px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .about-main {
+    padding-top: 104px;
+  }
+
+  .about-card {
+    padding: 14px;
+  }
+}

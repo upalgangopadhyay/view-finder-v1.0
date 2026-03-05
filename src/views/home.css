@@ -3,31 +3,31 @@
   display: block;
   min-height: 100vh;
 }
- 
+
 .home-container2 {
   display: none;
 }
- 
+
 .home-container3 {
   display: contents;
 }
- 
+
 .home-container4 {
   display: none;
 }
- 
+
 .home-container5 {
   display: contents;
 }
- 
+
 .home-container6 {
   display: none;
 }
- 
+
 .home-container7 {
   display: contents;
 }
- 
+
 .home-container8 {
   right: 50px;
   border: 1px solid #ffffff5c;
@@ -46,16 +46,39 @@
   backdrop-filter: blur(6px);
   background-color: rgba(41, 41, 41, 0.41);
 }
- 
+
 .home-icon253 {
   width: 24px;
   margin-right: 4px;
 }
- 
+
 .home-text58 {
   color: white;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
+}
+
+.custom-tour-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 24px 40px;
+}
+
+.custom-tour-content {
+  background: #eefbf9;
+  border: 1px solid #ccf4ef;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.custom-tour-title {
+  margin: 0;
+  color: #0f172a;
+}
+
+.custom-tour-text {
+  margin: 8px 0 16px;
+  color: #334155;
 }
