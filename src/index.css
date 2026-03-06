@@ -2536,3 +2536,42 @@ body.modal-open {
     max-height: calc(100dvh - 64px);
   }
 }
+
+@media(max-width: 767px) {
+  .navigation-menu {
+    display: block;
+    left: 0;
+    right: 0;
+    top: 73px;
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    transition: max-height 220ms ease, opacity 160ms ease, visibility 160ms ease;
+  }
+
+  .navigation-menu.navigation-menu-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    max-height: calc(100dvh - 73px);
+    overflow-y: auto;
+  }
+}
+
+@media(max-width: 479px) {
+  .navigation-menu {
+    top: 64px;
+  }
+
+  .navigation-menu.navigation-menu-open {
+    max-height: calc(100dvh - 64px);
+  }
+}
