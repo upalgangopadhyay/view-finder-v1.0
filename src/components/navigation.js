@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./navigation.css";
 import { Phone } from "lucide-react";
 
+const MOBILE_BREAKPOINT = 767;
+
 const Navigation = () => {
   useEffect(() => {
     const navigationToggle = document.getElementById("navigation-toggle");
@@ -10,58 +12,75 @@ const Navigation = () => {
 
     if (!navigationToggle || !navigationMenu) return;
 
+    const setBodyLock = (locked) => {
+      document.body.classList.toggle("nav-open", locked);
+    };
+
+    const isMenuOpen = () => navigationMenu.classList.contains("navigation-menu-open");
+
     const toggleMenu = () => {
-      const isExpanded = navigationToggle.getAttribute("aria-expanded") === "true";
-      navigationToggle.setAttribute("aria-expanded", !isExpanded);
-      navigationMenu.classList.toggle("navigation-menu-open");
+      const expanded = navigationToggle.getAttribute("aria-expanded") === "true";
+      const nextState = !expanded;
+
+      navigationToggle.setAttribute("aria-expanded", String(nextState));
+      navigationMenu.classList.toggle("navigation-menu-open", nextState);
+
+      if (window.innerWidth <= MOBILE_BREAKPOINT) {
+        setBodyLock(nextState);
+      }
     };
 
     const closeMenu = () => {
       navigationToggle.setAttribute("aria-expanded", "false");
       navigationMenu.classList.remove("navigation-menu-open");
+      setBodyLock(false);
+    };
+
+    const onLinkClick = () => {
+      if (window.innerWidth <= MOBILE_BREAKPOINT) closeMenu();
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth > MOBILE_BREAKPOINT) {
+        closeMenu();
+      } else if (isMenuOpen()) {
+        setBodyLock(true);
+      }
+    };
+
+    const handleClickOutside = (event) => {
+      if (window.innerWidth > MOBILE_BREAKPOINT) return;
+      if (!isMenuOpen()) return;
+
+      const insideNav =
+        navigationToggle.contains(event.target) || navigationMenu.contains(event.target);
+
+      if (!insideNav) closeMenu();
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape" && isMenuOpen()) {
+        closeMenu();
+        navigationToggle.focus();
+      }
     };
 
     navigationToggle.addEventListener("click", toggleMenu);
 
     const navigationLinks = navigationMenu.querySelectorAll(".navigation-link, .navigation-cta");
-    navigationLinks.forEach((link) =>
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 767) closeMenu();
-      })
-    );
+    navigationLinks.forEach((link) => link.addEventListener("click", onLinkClick));
 
-    let resizeTimer;
-    const handleResize = () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        if (window.innerWidth > 767) closeMenu();
-      }, 250);
-    };
     window.addEventListener("resize", handleResize);
-
-    const handleClickOutside = (e) => {
-      if (window.innerWidth <= 767) {
-        const isInsideNav = navigationToggle.contains(e.target) || navigationMenu.contains(e.target);
-        const isMenuOpen = navigationMenu.classList.contains("navigation-menu-open");
-
-        if (!isInsideNav && isMenuOpen) closeMenu();
-      }
-    };
     document.addEventListener("click", handleClickOutside);
-
-    const handleEscape = (e) => {
-      if (e.key === "Escape" && navigationMenu.classList.contains("navigation-menu-open")) {
-        closeMenu();
-        navigationToggle.focus();
-      }
-    };
     document.addEventListener("keydown", handleEscape);
 
     return () => {
       navigationToggle.removeEventListener("click", toggleMenu);
+      navigationLinks.forEach((link) => link.removeEventListener("click", onLinkClick));
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("click", handleClickOutside);
       document.removeEventListener("keydown", handleEscape);
+      setBodyLock(false);
     };
   }, []);
 

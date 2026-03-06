@@ -16,12 +16,17 @@ function BookingInquiryModal({ tour, onClose }) {
   });
 
   useEffect(() => {
+    document.body.classList.add("modal-open");
+
     const onKeyDown = (event) => {
       if (event.key === "Escape") onClose();
     };
 
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.classList.remove("modal-open");
+    };
   }, [onClose]);
 
   const handleChange = (event) => {
