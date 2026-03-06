@@ -113,6 +113,22 @@
   font-weight: 600;
 }
 
+.tour-brochure-link {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cfe0f5;
+  background: #f4f8ff;
+  color: #0b3d91;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tour-brochure-link:hover {
+  background: #e8f1ff;
+}
+
 .tour-facts-grid {
   display: grid;
   gap: 12px;
@@ -251,5 +267,11 @@
     right: 10px;
     font-size: 0.82rem;
     padding: 9px 12px;
+  }
+
+  .tour-brochure-link {
+    display: block;
+    margin: 10px 0 0;
+    width: fit-content;
   }
 }

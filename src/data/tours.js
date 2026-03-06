@@ -7,6 +7,7 @@ export const tours = [
     shortDescription:
       "Snow peaks, Dal Lake, and valley drives make this extended Kashmir circuit scenic and deeply relaxing.",
     detailAvailable: true,
+    brochurePdf: "/brochures/kashmir-group-tour-from-kolkata-brochure.pdf",
     seoTitle: "Kashmir Group Tour from Kolkata (7 Days) | Viewfinder Travel Solutions",
     seoDescription:
       "Book a 7-day Kashmir group tour from Kolkata covering Srinagar, Sonmarg, Gulmarg and Pahalgam with comfortable stays.",
@@ -108,6 +109,7 @@ export const tours = [
     shortDescription:
       "Colonial hill charm, snowy valleys, and adventure-ready mountain routes make this Himachal journey a favorite.",
     detailAvailable: true,
+    brochurePdf: "/brochures/shimla-manali-group-tour-from-kolkata-brochure.pdf",
     seoTitle: "Shimla Manali Group Tour from Kolkata | Viewfinder Travel Solutions",
     seoDescription:
       "Explore Shimla, Kufri, Manali, Solang, Atal Tunnel, Kasol and Manikaran with a value-packed Shimla Manali group tour.",
@@ -204,6 +206,7 @@ export const tours = [
     shortDescription:
       "Sacred Ganga evenings, hill viewpoints, and Rishikesh riverside energy in one compact Uttarakhand tour.",
     detailAvailable: true,
+    brochurePdf: "/brochures/haridwar-mussoorie-rishikesh-tour-from-kolkata-brochure.pdf",
     seoTitle: "Haridwar Mussoorie Rishikesh Tour Package | Viewfinder Travel Solutions",
     seoDescription:
       "Book Haridwar and Mussoorie tour with Ganga Aarti, Dehradun-Monsoorie excursion and Rishikesh highlights.",
@@ -290,6 +293,7 @@ export const tours = [
     shortDescription:
       "Forest trails, wildlife safaris, riverside villages, and tea-country drives define this North Bengal getaway.",
     detailAvailable: true,
+    brochurePdf: "/brochures/duars-gorumara-jaldapara-chilapata-tour-brochure.pdf",
     seoTitle: "Duars Tour Package | Gorumara Jaldapara Chilapata",
     seoDescription:
       "Explore Duars with Gorumara, Jaldapara, Chilapata, Buxa and Jayanti in a 5-day wildlife and nature circuit.",
@@ -381,6 +385,7 @@ export const tours = [
     shortDescription:
       "Tea gardens, heritage viewpoints, and offbeat village stays make this Darjeeling route rich and refreshing.",
     detailAvailable: true,
+    brochurePdf: "/brochures/darjeeling-and-offbeat-tour-brochure.pdf",
     seoTitle: "Darjeeling and Offbeat Tour Package | Viewfinder Travel Solutions",
     seoDescription:
       "Explore Sittong, Lamahatta, Darjeeling, Lepchajagat and Mirik in a scenic 5-day offbeat hill package.",
@@ -472,6 +477,7 @@ export const tours = [
     shortDescription:
       "Monasteries, high mountain passes, border lakes, and Kaziranga wildlife create a grand Northeast expedition.",
     detailAvailable: true,
+    brochurePdf: "/brochures/arunachal-pradesh-guwahati-kaziranga-tour-brochure.pdf",
     seoTitle: "Arunachal Pradesh Tour with Guwahati and Kaziranga | Viewfinder Travel Solutions",
     seoDescription:
       "Plan an 8-day Arunachal Pradesh tour covering Guwahati, Bomdila, Tawang, Dirang and Kaziranga with curated highlights.",
@@ -579,6 +585,7 @@ export const tours = [
     shortDescription:
       "Historic zigzag roads, sunrise ridgelines, and high-altitude villages define this East Sikkim Silk Route journey.",
     detailAvailable: true,
+    brochurePdf: "/brochures/silk-route-east-sikkim-tour-brochure.pdf",
     seoTitle: "Silk Route East Sikkim Tour Package | Viewfinder Travel Solutions",
     seoDescription:
       "Discover East Sikkim Silk Route with Sillerygaon, Zuluk, Nathang Valley, Aritar and Gangtok in a 5-day itinerary.",
@@ -670,6 +677,7 @@ export const tours = [
     shortDescription:
       "Beach sunsets, old churches, forts, and vibrant coastal streets make Goa perfect for easy tropical breaks.",
     detailAvailable: true,
+    brochurePdf: "/brochures/goa-tour-package-brochure.pdf",
     seoTitle: "Goa Tour Package | South and North Goa Highlights",
     seoDescription:
       "Enjoy a 4-day Goa plan with South Goa relaxation, North Goa sightseeing and curated coastal experiences.",

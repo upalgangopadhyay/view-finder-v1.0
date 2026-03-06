@@ -74,6 +74,16 @@ function TourDetail() {
             <a className="tour-primary-btn" href={whatsappUrl} target="_blank" rel="noreferrer noopener">
               Enquire on WhatsApp
             </a>
+            {tour.brochurePdf ? (
+              <a
+                className="tour-brochure-link"
+                href={tour.brochurePdf}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Get the full brochure here
+              </a>
+            ) : null}
           </div>
         </section>
 
