@@ -27,6 +27,10 @@
   min-height: 340px;
 }
 
+.ut-card-clickable {
+  cursor: pointer;
+}
+
 .ut-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 30px rgba(31,41,55,0.12);
@@ -101,114 +105,6 @@
   .ut-image-wrap { height: 140px; }
   .ut-card { min-height: 300px; }
 }
-
-/* ...existing code... */
-
-.td-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1200;
-  padding: 20px;
-  animation: fadeIn 220ms ease;
-}
-
-@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
-
-.td-content {
-  background: #fff;
-  width: 95%;
-  max-width: 920px;
-  max-height: 90vh;
-  border-radius: 10px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  transform: scale(0.96);
-  animation: td-zoom-in 260ms cubic-bezier(.2,.9,.2,1) forwards;
-  box-shadow: 0 20px 50px rgba(2,6,23,0.35);
-  position: relative;
-}
-
-@keyframes td-zoom-in {
-  from { transform: scale(0.96); opacity: 0.9 }
-  to { transform: scale(1); opacity: 1 }
-}
-
-.td-content-closing {
-  animation: td-zoom-out 200ms forwards;
-}
-
-@keyframes td-zoom-out {
-  from { transform: scale(1); opacity: 1 }
-  to { transform: scale(0.96); opacity: 0 }
-}
-
-.td-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(255,255,255,0.9);
-  border: none;
-  font-size: 22px;
-  line-height: 1;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.td-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.td-media {
-  min-height: 260px;
-  background: #f7fafc;
-}
-
-.td-body {
-  padding: 20px 22px;
-  overflow: auto;
-}
-
-.td-body h2 {
-  margin: 0 0 8px 0;
-  font-size: 1.45rem;
-  color: #0f172a;
-}
-
-.td-meta {
-  margin: 6px 0 12px 0;
-  color: #6b7280;
-  font-size: 0.95rem;
-}
-
-.td-long {
-  color: #334155;
-  line-height: 1.5;
-  margin-bottom: 14px;
-}
-
-.td-actions {
-  display: flex;
-  gap: 10px;
-}
-
-/* responsive */
-@media (max-width: 720px) {
-  .td-content { grid-template-columns: 1fr; max-height: 95vh; }
-  .td-media { min-height: 200px; }
-}
-
-/* ...existing code... */
-
 
 .bi-overlay {
   position: fixed;

@@ -11,6 +11,7 @@ import Gallery from './views/gallery';
 import PlanYourTour from './views/planYourTour';
 import Testimonials from './views/testimonials';
 import AboutUs from './views/aboutUs';
+import TourDetail from './views/tourDetail';
 
 import './index.css';
 import Home from './views/home';
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/plan-your-tour" element={<PlanYourTour />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/tours/:slug" element={<TourDetail />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

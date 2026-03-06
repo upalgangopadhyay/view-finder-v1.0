@@ -1,0 +1,255 @@
+.tour-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.tour-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 108px 16px 40px;
+}
+
+.tour-breadcrumbs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.tour-breadcrumbs a {
+  color: #0ea5a4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tour-whatsapp-float {
+  position: fixed;
+  top: 84px;
+  right: 14px;
+  z-index: 1200;
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+}
+
+.tour-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.tour-hero-image {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+}
+
+.tour-hero-content {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
+}
+
+.tour-rating-chip {
+  display: inline-block;
+  margin: 0 0 10px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #e6fffb;
+  color: #0f766e;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.tour-hero-content h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(1.45rem, 2.7vw, 2rem);
+  line-height: 1.2;
+}
+
+.tour-hero-content p {
+  margin: 10px 0 14px;
+  color: #334155;
+  line-height: 1.55;
+}
+
+.tour-mini-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tour-mini-facts span {
+  border-radius: 999px;
+  border: 1px solid #dbe3ef;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: #334155;
+  background: #f8fafc;
+}
+
+.tour-primary-btn {
+  display: inline-block;
+  background: #0ea5a4;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+}
+
+.tour-facts-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.tour-fact-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.tour-fact-card h2 {
+  margin: 0 0 6px;
+  font-size: 0.92rem;
+  color: #0f172a;
+}
+
+.tour-fact-card p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.45;
+  font-size: 0.9rem;
+}
+
+.tour-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.tour-soft-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.tour-section h2 {
+  margin: 0 0 10px;
+  color: #0f172a;
+  font-size: 1.15rem;
+}
+
+.tour-section ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.tour-itinerary-list {
+  display: grid;
+  gap: 10px;
+}
+
+.tour-itinerary-item {
+  border: 1px solid #dce6f3;
+  border-radius: 12px;
+  padding: 10px;
+  background: #f7fbff;
+}
+
+.tour-itinerary-item h3 {
+  margin: 0 0 6px;
+  color: #0f172a;
+  font-size: 0.96rem;
+}
+
+.tour-itinerary-item p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.tour-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.tour-faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.tour-faq-item h3 {
+  margin: 0 0 5px;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+.tour-faq-item p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.tour-card-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.tour-back-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0ea5a4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .tour-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tour-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .tour-main {
+    padding-top: 96px;
+  }
+
+  .tour-whatsapp-float {
+    top: 74px;
+    right: 10px;
+    font-size: 0.82rem;
+    padding: 9px 12px;
+  }
+}
