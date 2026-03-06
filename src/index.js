@@ -12,6 +12,9 @@ import PlanYourTour from './views/planYourTour';
 import Testimonials from './views/testimonials';
 import AboutUs from './views/aboutUs';
 import TourDetail from './views/tourDetail';
+import QuickGetawaysPage from './views/quickGetaways';
+import ExploreIndiaPage from './views/exploreIndia';
+import RequestedDestinationDetail from './views/requestedDestinationDetail';
 
 import './index.css';
 import Home from './views/home';
@@ -48,6 +51,9 @@ const App = () => {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/tours/:slug" element={<TourDetail />} />
+        <Route path="/destinations/quick-getaways" element={<QuickGetawaysPage />} />
+        <Route path="/destinations/explore-india" element={<ExploreIndiaPage />} />
+        <Route path="/destinations/:slug" element={<RequestedDestinationDetail />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

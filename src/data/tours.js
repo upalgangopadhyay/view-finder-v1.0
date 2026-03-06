@@ -202,7 +202,7 @@ export const tours = [
     id: 3,
     slug: "haridwar-mussoorie-rishikesh-tour-from-kolkata",
     title: "Haridwar and Mussoorie",
-    img: "/thumbnails/haridwar-mussorie.jpg",
+    img: "/thumbnails/haridwar-mussoorie.jpg",
     shortDescription:
       "Sacred Ganga evenings, hill viewpoints, and Rishikesh riverside energy in one compact Uttarakhand tour.",
     detailAvailable: true,

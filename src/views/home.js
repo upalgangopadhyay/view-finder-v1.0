@@ -5,6 +5,7 @@ import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import "./home.css";
 import UpcomingTours from "../components/upcomingTours";
+import FrequentlyRequestedDestinations from "../components/frequentlyRequestedDestinations";
 
 const Home = () => {
   useEffect(() => {
@@ -22,7 +23,7 @@ const Home = () => {
       });
     }, observerOptions);
 
-    document.querySelectorAll(".tour-card, .feature-card, .testimonial-card, .gallery-item").forEach((el, index) => {
+    document.querySelectorAll(".tour-card, .feature-card, .testimonial-card, .gallery-item, .frd-card").forEach((el, index) => {
       el.style.opacity = "0";
       el.style.transform = "translateY(30px)";
       el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
@@ -79,6 +80,7 @@ const Home = () => {
       </section>
 
       <UpcomingTours />
+      <FrequentlyRequestedDestinations />
 
       <section id="plan-your-own-tour" className="custom-tour-section">
         <div className="custom-tour-content">
