@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
+  useLocation,
 } from 'react-router-dom';
 import Gallery from './views/gallery';
 import PlanYourTour from './views/planYourTour';
@@ -13,10 +14,32 @@ import AboutUs from './views/aboutUs';
 
 import './index.css';
 import Home from './views/home';
+import { initAnalytics, trackPageView } from './lib/analytics';
+
+function AnalyticsListener() {
+  const location = useLocation();
+  const hasTrackedInitial = useRef(false);
+
+  useEffect(() => {
+    if (!hasTrackedInitial.current) {
+      hasTrackedInitial.current = true;
+      return;
+    }
+
+    trackPageView(`${location.pathname}${location.search}`);
+  }, [location.pathname, location.search]);
+
+  return null;
+}
 
 const App = () => {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   return (
     <Router>
+      <AnalyticsListener />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />

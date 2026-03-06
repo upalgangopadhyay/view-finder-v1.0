@@ -1,55 +1,56 @@
 import React, { useState } from 'react';
 import './upcomingTours.css';
 import BookingInquiryModal from './bookingInquiryModal';
+import { trackEvent } from '../lib/analytics';
 
 const tours = [
   {
     id: 1,
     title: 'Kashmir',
     img: '/thumbnails/kashmir.jpg',
-    long: 'Mountain and lake',
+    long: 'Dal Lake shikara rides, Mughal gardens, and Himalayan valleys make Kashmir unforgettable.',
   },
   {
     id: 2,
     title: 'Shimla Manali',
     img: '/thumbnails/shimla-manali.jpg',
-    long: 'Mountains',
+    long: 'Pine-clad hills, Mall Road charm, Beas Valley views, and Solang adventures define this mountain escape.',
   },
   {
     id: 3,
     title: 'Haridwar and Mussoorie',
     img: '/thumbnails/haridwar-mussorie.jpg',
-    long: 'Ganga river',
+    long: 'Witness evening Ganga Aarti at Har Ki Pauri, then unwind in Mussoorie\'s cool Garhwal hill air.',
   },
   {
     id: 4,
     title: 'Duars',
     img: '/thumbnails/duars.jpg',
-    long: 'Jungle Safari',
+    long: 'Lush forests, tea gardens, and jeep safaris through Gorumara and Jaldapara make Duars a wildlife favorite.',
   },
   {
     id: 5,
     title: 'Darjeeling and offbeat',
     img: '/thumbnails/darjeeling-and-offbeat.jpg',
-    long: 'Tea gardens',
+    long: 'Rolling tea estates, toy-train heritage, and Kanchenjunga viewpoints create Darjeeling\'s classic and offbeat hill magic.',
   },
   {
     id: 6,
     title: 'Gangtok',
     img: '/thumbnails/gangtok.jpg',
-    long: 'Himalayan town views',
+    long: 'Gangtok blends lively streets with Buddhist monasteries, mountain panoramas, and easy access to Tsomgo Lake.',
   },
   {
     id: 7,
     title: 'Silk route',
     img: 'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg',
-    long: 'Mountain road of silk route (east sikkim)',
+    long: 'Drive historic zigzag mountain roads near Zuluk, with sunrise viewpoints and dramatic East Sikkim Himalayan landscapes.',
   },
   {
     id: 8,
     title: 'Goa',
     img: '/thumbnails/goa.jpg',
-    long: 'Goa beach',
+    long: 'Golden beaches, Arabian Sea sunsets, and Portuguese-era churches and forts make Goa both relaxed and culturally rich.',
   },
 ];
 
@@ -59,10 +60,19 @@ export default function UpcomingTours() {
   const [bookingTour, setBookingTour] = useState(null);
 
   const openBooking = (tour) => {
+    trackEvent('book_click', {
+      tour_name: tour.title,
+      source: 'upcoming_tour_card',
+    });
     setBookingTour(tour);
   };
 
   const openEnquiry = (tour) => {
+    trackEvent('enquire_click', {
+      tour_name: tour.title,
+      source: 'upcoming_tour_card',
+    });
+
     const text = `Hi, I wanted to get more details regarding the '${tour.title}' trip.`;
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./upcomingTours.css";
+import { trackEvent } from "../lib/analytics";
 
 const AGENCY_PHONE = "918697524868";
 const AGENCY_EMAIL = "info@viewfindertravel.com";
@@ -66,6 +67,13 @@ function BookingInquiryModal({ tour, onClose }) {
     const emailUrl = `mailto:${AGENCY_EMAIL}?subject=${encodeURIComponent(
       emailSubject
     )}&body=${encodeURIComponent(inquiryText)}`;
+
+    trackEvent("booking_inquiry_submit", {
+      tour_name: tour.title,
+      travelers: formData.travelers,
+    });
+    trackEvent("booking_inquiry_whatsapp_open", { tour_name: tour.title });
+    trackEvent("booking_inquiry_email_open", { tour_name: tour.title });
 
     launchLink(whatsappUrl, "_blank");
     launchLink(emailUrl);

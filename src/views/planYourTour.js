@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import "./planYourTour.css";
+import { trackEvent } from "../lib/analytics";
 
 const AGENCY_PHONE = "918697524868";
 const AGENCY_EMAIL = "info@viewfindertravel.com";
@@ -39,6 +40,14 @@ function PlanYourTour() {
     const message = lines.join("\n");
     const whatsappUrl = `https://wa.me/${AGENCY_PHONE}?text=${encodeURIComponent(message)}`;
     const emailUrl = `mailto:${AGENCY_EMAIL}?subject=${encodeURIComponent("Custom Tour Inquiry")}&body=${encodeURIComponent(message)}`;
+
+    trackEvent("plan_tour_submit", {
+      destination: formData.destination,
+      experience_type: formData.experienceType,
+      travelers: formData.numberOfPeople,
+    });
+    trackEvent("plan_tour_whatsapp_open", { destination: formData.destination });
+    trackEvent("plan_tour_email_open", { destination: formData.destination });
 
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     window.location.href = emailUrl;
